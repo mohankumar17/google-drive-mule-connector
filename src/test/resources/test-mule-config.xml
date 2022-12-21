@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:googledrive="http://www.mulesoft.org/schema/mule/googledrive"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/googledrive http://www.mulesoft.org/schema/mule/googledrive/current/mule-googledrive.xsd">
+
+    <googledrive:config name="config" configId="configId">
+        <googledrive:connection requiredParameter="aValue" />
+    </googledrive:config>
+
+    <flow name="sayHiFlow">
+        <googledrive:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <googledrive:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
