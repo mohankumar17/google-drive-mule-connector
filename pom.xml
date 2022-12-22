@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.infometry.googleDrive</groupId>
 	<artifactId>google-drive-connector</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.8</version>
 	<packaging>mule-extension</packaging>
 	<name>GoogleDrive Extension</name>
 

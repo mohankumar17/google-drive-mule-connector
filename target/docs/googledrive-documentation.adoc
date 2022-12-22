@@ -56,12 +56,47 @@ Default configuration
 |======================
 
 ==== Associated Operations
+* <<insertFile>> {nbsp}
 * <<listFiles>> {nbsp}
 * <<unauthorize>> {nbsp}
 
 
 
 == Operations
+
+[[insertFile]]
+=== Insert File
+`<googledrive:insert-file>`
+
+
+==== Parameters
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+| Name | Type | Description | Default Value | Required
+| Configuration | String | The name of the configuration to use. | | *x*{nbsp}
+| Output Mime Type a| String |  +++The mime type of the payload that this operation outputs.+++ |  | {nbsp}
+| File Name a| String |  +++Provide the name of the file to upload+++ |  | *x*{nbsp}
+| File Path a| String |  +++Provide the path of the file to upload+++ |  | *x*{nbsp}
+| File Extension a| String |  +++Provide the extension of the file+++ |  | *x*{nbsp}
+| Target Variable a| String |  +++The name of a variable on which the operation's output will be placed+++ |  | {nbsp}
+| Target Value a| String |  +++An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable+++ |  +++#[payload]+++ | {nbsp}
+| Reconnection Strategy a| * <<reconnect>>
+* <<reconnect-forever>> |  +++A retry strategy in case of connectivity errors+++ |  | {nbsp}
+|======================
+
+==== Output
+[cols=".^50%,.^50%"]
+|======================
+| *Type* a| String
+|======================
+
+==== For Configurations.
+* <<config>> {nbsp}
+
+==== Throws
+* GOOGLEDRIVE:CONNECTIVITY {nbsp}
+* GOOGLEDRIVE:RETRY_EXHAUSTED {nbsp}
+
 
 [[listFiles]]
 === List Files
